@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Horoscope</title>
+    <link rel="stylesheet" href="../static/style16.css">
+</head>
+<body>
+
+    <header>
+        <nav id="nav-bar">
+            <ul>
+                <li>Daily Horoscope</li>
+            </ul>
+        </nav>
+    </header>
+    {%block content%}
+
+    <div id="text-part">
+        <h1>Want to know your Horoscope for today?</h1>
+        <h3>Type in your email-id</h3>
+        <h3>We will send you the Horoscope</h3>
+    </div>
+    <div id="form-part">
+        <form action="{{url_for('horoscope')}}" method="POST">
+            <div id="email-part">
+                <input class="input-box" type="email" name="user_email" id="user_email" placeholder="Enter your email-id">
+            </div>            
+            <div id="sign-part">
+                <select class="input-box" id="signs" name="signs" required>
+                <option value="e" selected="selected" >Choose your zodiac sign</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Libra">Libra</option>
+                <option value="Pisces">Pisces</option>
+                <option value="Aquarius">Aquarius</option>
+                <option value="Scorpio">Scorpio</option>
+                <option value="Sagittarius">Sagittarius</option>
+                <option value="Virgo">Virgo</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Taurus">Taurus</option>
+                <option value="Aries">Aries</option>
+                <option value="Leo">Leo</option>
+                <option value="Capricon">Capricon</option>
+                </select>
+                <div style="width: 70%; text-align:center;margin: auto;color:brown;">
+                    {{text|safe}}
+                </div>
+            </div>
+    
+            <input type="submit" name="Submit" id="submit">
+        </form>    
+    </div>
+    {%endblock%}
+    <footer id="footer-bar">
+        <p>Horoscopes are extracted from <a href="https://www.astrology.com/us/home.aspx" target="_blank">astrology.com</a></p>
+    </footer>
+</body>
+</html>
