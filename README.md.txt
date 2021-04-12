@@ -8,3 +8,5 @@ A python webapp to display user's horoscope using Flask, HTML, CSS, BeautifulSou
 
 *Furthermore, the user can see the horoscopes of the previous day 
 	and next day in the browser once submit is pressed...
+
+Link for the app ==> https://knowyourhoroscope.herokuapp.com/
